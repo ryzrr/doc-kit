@@ -153,30 +153,23 @@ describe('createLazyGenerator', () => {
     assert.equal(gen.version, '1.0.0');
   });
 
-  it('exposes a generate function that delegates to the lazily loaded module', async () => {
-    // The dynamic import inside createLazyGenerator resolves relative to generators.mjs
-    // which is at src/utils/ so '../generators/ast/generate.mjs' → src/generators/ast/generate.mjs
+  it('exposes generate and processChunk functions that delegate to the lazily loaded module', async () => {
+    // Both exports are mocked in a single mock.module() call to avoid ESM import
+    // cache collisions that occur when re-mocking the same specifier across two it() blocks.
     const specifier = import.meta.resolve('../../generators/ast/generate.mjs');
     const fakeGenerate = async input => `processed:${input}`;
-    mock.module(specifier, {
-      namedExports: { generate: fakeGenerate },
-    });
-
-    const gen = createLazyGenerator({ name: 'ast' });
-    const result = await gen.generate('hello');
-    assert.equal(result, 'processed:hello');
-  });
-
-  it('exposes a processChunk function that delegates to the lazily loaded module', async () => {
-    const specifier = import.meta.resolve('../../generators/ast/generate.mjs');
     const fakeProcessChunk = async (input, indices) =>
       indices.map(i => input[i]);
     mock.module(specifier, {
-      namedExports: { processChunk: fakeProcessChunk },
+      namedExports: { generate: fakeGenerate, processChunk: fakeProcessChunk },
     });
 
     const gen = createLazyGenerator({ name: 'ast' });
-    const result = await gen.processChunk(['a', 'b', 'c'], [0, 2]);
-    assert.deepStrictEqual(result, ['a', 'c']);
+
+    const generateResult = await gen.generate('hello');
+    assert.equal(generateResult, 'processed:hello');
+
+    const processChunkResult = await gen.processChunk(['a', 'b', 'c'], [0, 2]);
+    assert.deepStrictEqual(processChunkResult, ['a', 'c']);
   });
 });
