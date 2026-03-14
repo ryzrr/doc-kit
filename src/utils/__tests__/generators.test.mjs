@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { describe, it, mock } from 'node:test';
+import { describe, it, mock, afterEach } from 'node:test';
 
 import {
   groupNodesByModule,
@@ -144,6 +144,8 @@ describe('buildApiDocURL', () => {
 });
 
 describe('createLazyGenerator', () => {
+  afterEach(() => mock.restoreAll());
+
   it('spreads metadata properties onto the returned object', () => {
     const metadata = { name: 'ast', version: '1.0.0', dependsOn: undefined };
     const gen = createLazyGenerator(metadata);
@@ -163,7 +165,6 @@ describe('createLazyGenerator', () => {
     const gen = createLazyGenerator({ name: 'ast' });
     const result = await gen.generate('hello');
     assert.equal(result, 'processed:hello');
-    mock.restoreAll();
   });
 
   it('exposes a processChunk function that delegates to the lazily loaded module', async () => {
@@ -177,6 +178,5 @@ describe('createLazyGenerator', () => {
     const gen = createLazyGenerator({ name: 'ast' });
     const result = await gen.processChunk(['a', 'b', 'c'], [0, 2]);
     assert.deepStrictEqual(result, ['a', 'c']);
-    mock.restoreAll();
   });
 });

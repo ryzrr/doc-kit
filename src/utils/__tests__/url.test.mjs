@@ -1,7 +1,6 @@
 import assert from 'node:assert/strict';
-import { describe, it, mock } from 'node:test';
+import { describe, it, mock, afterEach } from 'node:test';
 
-// Mock node:fs/promises so we don't touch the real filesystem
 let fileContent = 'hello from file';
 mock.module('node:fs/promises', {
   namedExports: {
@@ -9,8 +8,6 @@ mock.module('node:fs/promises', {
   },
 });
 
-// Mock node:url passthrough (pathToFileURL is used inside importFromURL)
-// We load after mocking so the module picks up our stubs
 const { toParsedURL, loadFromURL } = await import('../url.mjs');
 
 describe('toParsedURL', () => {
@@ -31,6 +28,8 @@ describe('toParsedURL', () => {
 });
 
 describe('loadFromURL', () => {
+  afterEach(() => mock.restoreAll());
+
   it('should read content from the filesystem for a plain file path', async () => {
     fileContent = 'file content';
     const result = await loadFromURL('/some/path/file.txt');
@@ -50,6 +49,5 @@ describe('loadFromURL', () => {
 
     const result = await loadFromURL('https://nodejs.org/data.txt');
     assert.strictEqual(result, 'fetched content');
-    mock.restoreAll();
   });
 });
