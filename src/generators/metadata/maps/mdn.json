@@ -171,6 +171,7 @@
   "cookiestore": "https://developer.mozilla.org/docs/Web/API/CookieStore",
   "cookiestoremanager": "https://developer.mozilla.org/docs/Web/API/CookieStoreManager",
   "countqueuingstrategy": "https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy",
+  "crashreportcontext": "https://developer.mozilla.org/docs/Web/API/CrashReportContext",
   "createmonitor": "https://developer.mozilla.org/docs/Web/API/CreateMonitor",
   "credential": "https://developer.mozilla.org/docs/Web/API/Credential",
   "credentialscontainer": "https://developer.mozilla.org/docs/Web/API/CredentialsContainer",
