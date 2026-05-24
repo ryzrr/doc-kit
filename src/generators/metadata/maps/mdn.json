@@ -590,6 +590,7 @@
   "performancescripttiming": "https://developer.mozilla.org/docs/Web/API/PerformanceScriptTiming",
   "performanceservertiming": "https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming",
   "performancetiming": "https://developer.mozilla.org/docs/Web/API/PerformanceTiming",
+  "performancetimingconfidence": "https://developer.mozilla.org/docs/Web/API/PerformanceTimingConfidence",
   "periodicsyncevent": "https://developer.mozilla.org/docs/Web/API/PeriodicSyncEvent",
   "periodicsyncmanager": "https://developer.mozilla.org/docs/Web/API/PeriodicSyncManager",
   "periodicwave": "https://developer.mozilla.org/docs/Web/API/PeriodicWave",
