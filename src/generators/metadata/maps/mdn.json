@@ -1015,6 +1015,7 @@
   "xrview": "https://developer.mozilla.org/docs/Web/API/XRView",
   "xrviewerpose": "https://developer.mozilla.org/docs/Web/API/XRViewerPose",
   "xrviewport": "https://developer.mozilla.org/docs/Web/API/XRViewport",
+  "xrvisibilitymaskchangeevent": "https://developer.mozilla.org/docs/Web/API/XRVisibilityMaskChangeEvent",
   "xrwebglbinding": "https://developer.mozilla.org/docs/Web/API/XRWebGLBinding",
   "xrwebgldepthinformation": "https://developer.mozilla.org/docs/Web/API/XRWebGLDepthInformation",
   "xrwebgllayer": "https://developer.mozilla.org/docs/Web/API/XRWebGLLayer",
