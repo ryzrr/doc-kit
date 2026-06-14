@@ -750,7 +750,6 @@
   "svgradialgradientelement": "https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement",
   "svgrect": "https://developer.mozilla.org/docs/Web/API/SVGRect",
   "svgrectelement": "https://developer.mozilla.org/docs/Web/API/SVGRectElement",
-  "svgrenderingintent": "https://developer.mozilla.org/docs/Web/API/SVGRenderingIntent",
   "svgsvgelement": "https://developer.mozilla.org/docs/Web/API/SVGSVGElement",
   "svgscriptelement": "https://developer.mozilla.org/docs/Web/API/SVGScriptElement",
   "svgsetelement": "https://developer.mozilla.org/docs/Web/API/SVGSetElement",
