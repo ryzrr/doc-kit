@@ -421,6 +421,7 @@
   "idbkeyrange": "https://developer.mozilla.org/docs/Web/API/IDBKeyRange",
   "idbobjectstore": "https://developer.mozilla.org/docs/Web/API/IDBObjectStore",
   "idbopendbrequest": "https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest",
+  "idbrecord": "https://developer.mozilla.org/docs/Web/API/IDBRecord",
   "idbrequest": "https://developer.mozilla.org/docs/Web/API/IDBRequest",
   "idbtransaction": "https://developer.mozilla.org/docs/Web/API/IDBTransaction",
   "idbversionchangeevent": "https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent",
