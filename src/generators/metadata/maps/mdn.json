@@ -453,6 +453,7 @@
   "keyboardlayoutmap": "https://developer.mozilla.org/docs/Web/API/KeyboardLayoutMap",
   "keyframeeffect": "https://developer.mozilla.org/docs/Web/API/KeyframeEffect",
   "languagedetector": "https://developer.mozilla.org/docs/Web/API/LanguageDetector",
+  "languagemodel": "https://developer.mozilla.org/docs/Web/API/LanguageModel",
   "largestcontentfulpaint": "https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint",
   "launchparams": "https://developer.mozilla.org/docs/Web/API/LaunchParams",
   "launchqueue": "https://developer.mozilla.org/docs/Web/API/LaunchQueue",
